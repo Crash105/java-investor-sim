@@ -97,17 +97,6 @@ The following section will be dynamically updated as checkpoints are completed. 
 <!-- completion list start -->
 
 
-### Checkpoint 1
-
-- [ ] [- Complete Project Setup](https://github.com/MattToegel/Project-Cloner-Test/issues/5) (Completed: TBD)
-
-
-### Checkpoint 2
-
-- [ ] [Create REST API for Users](https://github.com/MattToegel/Project-Cloner-Test/issues/13) (Completed: TBD)
-- [x] [Implement Database Connectivity](https://github.com/MattToegel/Project-Cloner-Test/issues/12) (Completed: 10/11/2024)
-
-
 <!-- completion list end -->
 
 
