@@ -3,7 +3,7 @@
 
 **Author**: [Your Name Here]
 
-[Link to the original repository](https://github.com/your-repo-link)
+[Link to the original repository](https://github.com/MattToegel/project-guide-template)
 
 ## Project Overview
 
@@ -19,7 +19,7 @@ To get started with the project, follow these steps to set up the repository, fo
 
 First, fork the original repository by clicking the "Fork" button on the top right corner of the GitHub page or using this link:
 
-[Link to fork the repository](https://github.com/your-repo-link/fork)
+[Link to fork the repository](https://github.com/MattToegel/project-guide-template/fork)
 
 ### 2. Clone Your Forked Repository Locally
 
