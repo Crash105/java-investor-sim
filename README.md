@@ -1,5 +1,5 @@
 
-# Project Name
+# Investment Management Web Application
 
 **Author**: [Your Name Here]
 
@@ -7,9 +7,17 @@
 
 ## Project Overview
 
-This project is designed to [briefly describe the project's goals and features]. The project involves tracking and completing checkpoints, with GitHub Actions automating issue generation and tracking progress.
+This project is designed to build an **Investment Management Web Application** using **Spring Boot**. It features **user authentication** through Google OAuth, a **credits/points system**, and an **investment simulation** where users can invest in randomly generated companies with varying risks and rewards. The project allows users to track their investments, view transaction history, and analyze their decision-making performance over time.
 
-Each checkpoint tag pushes a new set of tasks (issues) and updates the project's progress in this `README.md` file automatically.
+Key functionalities include:
+- **User Profiles**: Users can log in via Google, with their profiles and investment history stored in a database.
+- **Admin Features**: Admins can manage user balances and access restricted features.
+- **Investment System**: Users invest in fake companies with incubation times and yields, and their decisions are logged for future analytics.
+- **Real-time Feedback**: Users can see leaderboards, transaction history, and investment performance metrics.
+- **Deployable on Heroku or GCE**: The project can be easily deployed to Heroku or Google Compute Engine, making it scalable and production-ready.
+
+Each checkpoint tag pushes a new set of tasks (issues) and updates the project's progress in this `README.md` file automatically via GitHub Actions.
+
 
 ## Getting Started
 
