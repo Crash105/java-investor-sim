@@ -1,0 +1,60 @@
+name: Generate Issues and Update README on Checkpoint Tag
+
+on:
+  push:
+    tags:
+      - 'checkpoint-*'  # Trigger when a checkpoint tag is pushed
+
+jobs:
+  process-checkpoint:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch full history for proper tag and branch operations
+
+      # Set up Node.js for running JavaScript scripts
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'node'
+
+      # Generate Issues for the next checkpoint
+      - name: Run Issue Generation Script
+        run: node .github/scripts/generate_issues.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_REF: ${{ github.ref }}
+
+      # Run the script to update README with the completed checkpoint issues
+      - name: Run README Update Script
+        run: node .github/scripts/update_readme.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_REF: ${{ github.ref }}
+
+      # Checkout the main branch to commit any changes
+      - name: Checkout main branch
+        run: git checkout main
+
+      # Check if there are any changes to the README.md
+      - name: Check for changes in README.md
+        run: git diff --quiet || echo "Changes detected in README.md"
+
+      # Commit and push the updated README.md if there are changes
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff-index --quiet HEAD; then
+            git add README.md
+            git commit -m "Update README with completed issues for ${GITHUB_REF}"
+            git push origin main
+          else
+            echo "No changes to commit."
+          fi
