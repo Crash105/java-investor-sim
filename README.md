@@ -1,7 +1,7 @@
 
 # Investment Management Web Application
 
-**Author**: [Your Name Here]
+**Author**: [Brian Maina]
 
 [Link to the original repository](https://github.com/MattToegel/java-investor-sim)
 
